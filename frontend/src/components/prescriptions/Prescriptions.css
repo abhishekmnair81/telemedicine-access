@@ -1,0 +1,1043 @@
+/* Prescriptions Page - Matching Dashboard Design System */
+
+.apollo-prescriptions {
+  display: flex;
+  min-height: 100vh;
+  background: var(--apollo-gray-50);
+}
+
+/* Sidebar */
+.apollo-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  color: var(--apollo-white);
+  padding: 0;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: var(--apollo-shadow-md);
+  z-index: 100;
+}
+
+.apollo-sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.apollo-nav-section {
+  padding: 20px 0;
+}
+
+.apollo-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  margin: 4px 12px;
+  border-radius: var(--apollo-radius);
+  cursor: pointer;
+  transition: var(--apollo-transition);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--apollo-white);
+}
+
+.apollo-nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.apollo-nav-item.active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+/* Main Content */
+.apollo-content {
+  margin-left: 260px;
+  flex: 1;
+  padding: 32px;
+  max-width: 1400px;
+}
+
+.apollo-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  background: var(--apollo-white);
+  padding: 24px 32px;
+  border-radius: 12px;
+  box-shadow: var(--apollo-shadow-sm);
+}
+
+.apollo-header-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--apollo-text-primary);
+  margin: 0 0 8px 0;
+}
+
+.apollo-header-content p {
+  color: var(--apollo-text-secondary);
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Loading State */
+.apollo-loading-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--apollo-white);
+  border-radius: 12px;
+  box-shadow: var(--apollo-shadow-sm);
+}
+
+.apollo-loading-state p {
+  color: var(--apollo-text-secondary);
+  font-size: 16px;
+}
+
+/* Prescriptions Container */
+.apollo-prescriptions-container {
+  background: transparent;
+}
+
+.apollo-prescriptions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 24px;
+}
+
+/* Prescription Card */
+.apollo-prescription-card {
+  background: var(--apollo-white);
+  border-radius: 12px;
+  box-shadow: var(--apollo-shadow-sm);
+  overflow: hidden;
+  transition: var(--apollo-transition);
+  border: 1px solid var(--apollo-gray-200);
+}
+
+.apollo-prescription-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--apollo-shadow-md);
+}
+
+.apollo-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  color: var(--apollo-white);
+}
+
+.apollo-prescription-number {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.apollo-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.apollo-btn-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: var(--apollo-radius);
+  color: var(--apollo-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--apollo-transition);
+}
+
+.apollo-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.apollo-btn-icon.apollo-delete:hover {
+  background: var(--apollo-red);
+}
+
+.apollo-card-body {
+  padding: 24px;
+}
+
+.apollo-patient-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--apollo-text-primary);
+  margin: 0 0 6px 0;
+}
+
+.apollo-patient-meta {
+  color: var(--apollo-text-secondary);
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.apollo-doctor-info {
+  margin: 16px 0;
+  padding: 12px 0;
+  border-top: 1px solid var(--apollo-gray-200);
+  border-bottom: 1px solid var(--apollo-gray-200);
+}
+
+.apollo-info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  color: var(--apollo-text-primary);
+  font-size: 14px;
+}
+
+.apollo-info-icon {
+  color: var(--apollo-green-primary);
+}
+
+.apollo-specialization {
+  color: var(--apollo-text-secondary);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.apollo-prescription-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--apollo-text-secondary);
+  font-size: 14px;
+  margin: 12px 0;
+}
+
+.apollo-date-icon {
+  color: var(--apollo-green-primary);
+}
+
+.apollo-diagnosis-section {
+  margin: 16px 0;
+  padding: 12px;
+  background: var(--apollo-gray-50);
+  border-radius: var(--apollo-radius);
+}
+
+.apollo-diagnosis-section strong {
+  color: var(--apollo-text-primary);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.apollo-diagnosis-section p {
+  color: var(--apollo-text-primary);
+  margin: 0;
+  font-size: 15px;
+}
+
+.apollo-medications-preview {
+  margin: 16px 0;
+}
+
+.apollo-medications-preview strong {
+  color: var(--apollo-text-primary);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.apollo-medications-preview ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.apollo-medications-preview li {
+  padding: 8px 12px;
+  background: var(--apollo-gray-50);
+  border-radius: var(--apollo-radius);
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apollo-med-name {
+  font-weight: 600;
+  color: var(--apollo-text-primary);
+}
+
+.apollo-med-dosage {
+  color: var(--apollo-text-secondary);
+  font-size: 13px;
+}
+
+.apollo-more-meds {
+  color: var(--apollo-green-primary);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.apollo-no-data {
+  color: var(--apollo-text-light);
+  font-size: 14px;
+  margin: 0;
+}
+
+.apollo-card-footer {
+  padding: 16px 24px;
+  background: var(--apollo-gray-50);
+  border-top: 1px solid var(--apollo-gray-200);
+}
+
+.apollo-btn-view-full {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  color: var(--apollo-white);
+  border: none;
+  border-radius: var(--apollo-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--apollo-transition);
+}
+
+.apollo-btn-view-full:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--apollo-shadow-md);
+}
+
+/* Empty State */
+.apollo-empty-state {
+  text-align: center;
+  padding: 80px 40px;
+  background: var(--apollo-white);
+  border-radius: 12px;
+  box-shadow: var(--apollo-shadow-sm);
+}
+
+.apollo-empty-icon {
+  font-size: 64px;
+  color: var(--apollo-gray-300);
+  margin-bottom: 24px;
+}
+
+.apollo-empty-state h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--apollo-text-primary);
+  margin: 0 0 12px 0;
+}
+
+.apollo-empty-state p {
+  color: var(--apollo-text-secondary);
+  margin: 0 0 24px 0;
+}
+
+/* Patient Selector Grid - NEW */
+.apollo-patients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.apollo-patient-selector {
+  background: var(--apollo-white);
+  border: 2px solid var(--apollo-gray-200);
+  border-radius: var(--apollo-radius);
+  padding: 16px;
+  cursor: pointer;
+  transition: var(--apollo-transition);
+}
+
+.apollo-patient-selector:hover {
+  border-color: var(--apollo-green-primary);
+  box-shadow: var(--apollo-shadow-sm);
+  transform: translateY(-2px);
+}
+
+.apollo-patient-selector.selected {
+  border-color: var(--apollo-green-primary);
+  background: var(--apollo-green-light);
+  box-shadow: 0 0 0 4px rgba(0, 179, 142, 0.1);
+}
+
+.apollo-patient-selector-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  color: var(--apollo-text-primary);
+  font-weight: 600;
+}
+
+.apollo-patient-selector-header svg {
+  color: var(--apollo-green-primary);
+}
+
+.apollo-patient-selector-info p {
+  margin: 4px 0;
+  color: var(--apollo-text-secondary);
+  font-size: 14px;
+}
+
+/* Modal */
+.apollo-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.apollo-modal-overlay.apollo-active {
+  display: flex;
+}
+
+.apollo-modal-content {
+  background: var(--apollo-white);
+  border-radius: 16px;
+  box-shadow: var(--apollo-shadow-lg);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: apollo-modalSlideIn 0.3s ease-out;
+}
+
+.apollo-modal-content.apollo-large {
+  max-width: 900px;
+}
+
+@keyframes apollo-modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apollo-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-bottom: 2px solid var(--apollo-gray-200);
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  border-radius: 16px 16px 0 0;
+  color: var(--apollo-white);
+}
+
+.apollo-modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.apollo-close-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: var(--apollo-radius);
+  color: var(--apollo-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--apollo-transition);
+  font-size: 20px;
+}
+
+.apollo-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Form Styles */
+.apollo-prescription-form {
+  padding: 32px;
+}
+
+.apollo-form-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--apollo-gray-200);
+}
+
+.apollo-form-section:last-of-type {
+  border-bottom: none;
+}
+
+.apollo-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--apollo-text-primary);
+  margin: 0 0 20px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--apollo-green-primary);
+  display: inline-block;
+}
+
+.apollo-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.apollo-form-group {
+  margin-bottom: 20px;
+}
+
+.apollo-form-group.apollo-full-width {
+  grid-column: 1 / -1;
+}
+
+.apollo-form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--apollo-text-primary);
+  margin-bottom: 8px;
+}
+
+.apollo-form-group input,
+.apollo-form-group select,
+.apollo-form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid var(--apollo-gray-200);
+  border-radius: var(--apollo-radius);
+  font-size: 15px;
+  color: var(--apollo-text-primary);
+  transition: var(--apollo-transition);
+  outline: none;
+  font-family: inherit;
+}
+
+.apollo-form-group input:focus,
+.apollo-form-group select:focus,
+.apollo-form-group textarea:focus {
+  border-color: var(--apollo-green-primary);
+  box-shadow: 0 0 0 4px rgba(0, 179, 142, 0.1);
+}
+
+.apollo-form-group input::placeholder,
+.apollo-form-group textarea::placeholder {
+  color: var(--apollo-text-light);
+}
+
+.apollo-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Medications Section */
+.apollo-btn-add-medication {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--apollo-green-light);
+  color: var(--apollo-green-primary);
+  border: 2px solid var(--apollo-green-primary);
+  border-radius: var(--apollo-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--apollo-transition);
+  margin-bottom: 20px;
+}
+
+.apollo-btn-add-medication:hover {
+  background: var(--apollo-green-primary);
+  color: var(--apollo-white);
+}
+
+.apollo-medications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.apollo-medication-entry {
+  background: var(--apollo-gray-50);
+  border: 2px solid var(--apollo-gray-200);
+  border-radius: var(--apollo-radius);
+  padding: 20px;
+  transition: var(--apollo-transition);
+}
+
+.apollo-medication-entry:hover {
+  border-color: var(--apollo-green-primary);
+  box-shadow: var(--apollo-shadow-sm);
+}
+
+.apollo-medication-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.apollo-med-number {
+  font-weight: 700;
+  color: var(--apollo-green-primary);
+  font-size: 16px;
+}
+
+.apollo-btn-remove {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #fee2e2;
+  color: var(--apollo-red);
+  border: 1px solid #fecaca;
+  border-radius: var(--apollo-radius);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--apollo-transition);
+}
+
+.apollo-btn-remove:hover {
+  background: var(--apollo-red);
+  color: var(--apollo-white);
+}
+
+.apollo-medication-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* Form Actions */
+.apollo-form-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid var(--apollo-gray-200);
+}
+
+/* Prescription Viewer */
+.apollo-prescription-viewer .apollo-modal-content {
+  max-width: 1000px;
+}
+
+.apollo-prescription-view {
+  padding: 0;
+}
+
+.apollo-prescription-document {
+  background: var(--apollo-white);
+  padding: 40px;
+  border-radius: 16px 16px 0 0;
+}
+
+.apollo-document-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  border-bottom: 3px solid var(--apollo-green-primary);
+  margin-bottom: 32px;
+}
+
+.apollo-clinic-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--apollo-green-primary);
+  margin: 0 0 6px 0;
+}
+
+.apollo-header-subtitle {
+  color: var(--apollo-text-secondary);
+  font-size: 15px;
+  margin: 0;
+}
+
+.apollo-prescription-id {
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  color: var(--apollo-white);
+  padding: 8px 16px;
+  border-radius: var(--apollo-radius);
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.apollo-qr-placeholder {
+  width: 80px;
+  height: 80px;
+  background: var(--apollo-gray-100);
+  border: 2px dashed var(--apollo-gray-300);
+  border-radius: var(--apollo-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--apollo-text-light);
+}
+
+.apollo-document-body {
+  margin: 32px 0;
+}
+
+.apollo-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.apollo-info-block {
+  background: var(--apollo-gray-50);
+  padding: 20px;
+  border-radius: var(--apollo-radius);
+  border-left: 4px solid var(--apollo-green-primary);
+}
+
+.apollo-info-block h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--apollo-green-primary);
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.apollo-info-block p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: var(--apollo-text-primary);
+}
+
+.apollo-diagnosis-block,
+.apollo-medications-block,
+.apollo-tests-block,
+.apollo-notes-block {
+  margin-bottom: 32px;
+}
+
+.apollo-diagnosis-block h4,
+.apollo-medications-block h4,
+.apollo-tests-block h4,
+.apollo-notes-block h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--apollo-text-primary);
+  margin: 0 0 16px 0;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--apollo-gray-200);
+}
+
+.apollo-diagnosis-block p,
+.apollo-tests-block p,
+.apollo-notes-block p {
+  color: var(--apollo-text-primary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.apollo-medications-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: var(--apollo-white);
+  border: 1px solid var(--apollo-gray-200);
+  border-radius: var(--apollo-radius);
+  overflow: hidden;
+}
+
+.apollo-medications-table thead {
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  color: var(--apollo-white);
+}
+
+.apollo-medications-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.apollo-medications-table tbody tr {
+  border-bottom: 1px solid var(--apollo-gray-200);
+  transition: var(--apollo-transition);
+}
+
+.apollo-medications-table tbody tr:hover {
+  background: var(--apollo-gray-50);
+}
+
+.apollo-medications-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.apollo-medications-table td {
+  padding: 14px 16px;
+  color: var(--apollo-text-primary);
+  font-size: 14px;
+}
+
+.apollo-med-name-cell {
+  font-weight: 600;
+  color: var(--apollo-text-primary);
+}
+
+.apollo-followup-block {
+  background: #fef3c7;
+  border-left: 4px solid var(--apollo-orange);
+  padding: 16px 20px;
+  border-radius: var(--apollo-radius);
+  font-weight: 600;
+  color: #92400e;
+  margin-bottom: 24px;
+}
+
+.apollo-document-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 2px solid var(--apollo-gray-200);
+}
+
+.apollo-signature-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.apollo-signature-line {
+  text-align: center;
+  min-width: 250px;
+}
+
+.apollo-signature-line p {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: var(--apollo-text-secondary);
+}
+
+.apollo-doctor-sign {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--apollo-green-primary);
+  font-style: italic;
+  padding-top: 12px;
+  border-top: 2px solid var(--apollo-green-primary);
+}
+
+.apollo-footer-note {
+  text-align: center;
+  padding: 16px;
+  background: var(--apollo-gray-50);
+  border-radius: var(--apollo-radius);
+}
+
+.apollo-footer-note p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--apollo-text-secondary);
+  font-style: italic;
+}
+
+.apollo-viewer-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  background: var(--apollo-gray-50);
+  border-radius: 0 0 16px 16px;
+}
+
+.apollo-btn-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--apollo-white);
+  border: 2px solid var(--apollo-gray-200);
+  border-radius: var(--apollo-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--apollo-transition);
+  color: var(--apollo-text-primary);
+}
+
+.apollo-btn-action:hover {
+  border-color: var(--apollo-green-primary);
+  color: var(--apollo-green-primary);
+  transform: translateY(-2px);
+}
+
+.apollo-btn-action.apollo-close {
+  background: var(--apollo-red);
+  border-color: var(--apollo-red);
+  color: var(--apollo-white);
+}
+
+.apollo-btn-action.apollo-close:hover {
+  background: #b91c1c;
+  border-color: #b91c1c;
+}
+
+/* Print Styles */
+@media print {
+  .apollo-sidebar,
+  .apollo-page-header,
+  .apollo-viewer-actions,
+  .apollo-close-btn {
+    display: none !important;
+  }
+
+  .apollo-content {
+    margin-left: 0;
+  }
+
+  .apollo-prescription-document {
+    padding: 20px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .apollo-sidebar {
+    width: 220px;
+  }
+
+  .apollo-content {
+    margin-left: 220px;
+  }
+
+  .apollo-prescriptions-grid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  .apollo-patients-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .apollo-sidebar {
+    width: 70px;
+  }
+
+  .apollo-brand-name,
+  .apollo-nav-item span {
+    display: none;
+  }
+
+  .apollo-content {
+    margin-left: 70px;
+    padding: 20px;
+  }
+
+  .apollo-page-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .apollo-primary-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .apollo-prescriptions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apollo-patients-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apollo-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .apollo-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apollo-modal-content {
+    margin: 10px;
+  }
+
+  .apollo-prescription-form {
+    padding: 24px 20px;
+  }
+
+  .apollo-medications-table {
+    font-size: 12px;
+  }
+
+  .apollo-medications-table th,
+  .apollo-medications-table td {
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .apollo-content {
+    padding: 16px;
+  }
+
+  .apollo-page-header {
+    padding: 20px;
+  }
+
+  .apollo-header-content h1 {
+    font-size: 24px;
+  }
+
+  .apollo-document-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .apollo-prescription-document {
+    padding: 24px 16px;
+  }
+
+  .apollo-viewer-actions {
+    flex-direction: column;
+  }
+
+  .apollo-btn-action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .apollo-form-actions {
+    flex-direction: column;
+  }
+
+  .apollo-form-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}

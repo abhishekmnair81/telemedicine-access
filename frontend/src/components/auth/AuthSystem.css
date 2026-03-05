@@ -1,0 +1,895 @@
+/* Use Dashboard color variables */
+:root {
+  --apollo-green-primary: #00b38e;
+  --apollo-green-dark: #009973;
+  --apollo-green-light: #e6f9f5;
+  --apollo-blue: #0070cd;
+  --apollo-orange: #ff6b35;
+  --apollo-red: #dc2626;
+  --apollo-gray-50: #fafafa;
+  --apollo-gray-100: #f5f5f5;
+  --apollo-gray-200: #e5e5e5;
+  --apollo-gray-300: #d4d4d4;
+  --apollo-gray-400: #a3a3a3;
+  --apollo-gray-500: #737373;
+  --apollo-gray-600: #525252;
+  --apollo-gray-700: #404040;
+  --apollo-gray-800: #262626;
+  --apollo-gray-900: #171717;
+  --apollo-white: #ffffff;
+  --apollo-text-primary: #1a1a1a;
+  --apollo-text-secondary: #666666;
+  --apollo-text-light: #999999;
+  --apollo-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --apollo-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --apollo-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --apollo-radius: 8px;
+  --apollo-transition: all 0.3s ease;
+}
+
+/* Apollo Auth Container */
+.apollo-auth-container {
+  min-height: 100vh;
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+/* Selection View Wrapper - Matches Dashboard green gradient */
+.apollo-selection-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.apollo-selection-card {
+  background: var(--apollo-white);
+  border-radius: 24px;
+  box-shadow: var(--apollo-shadow-lg);
+  width: 100%;
+  max-width: 520px;
+  padding: 48px 40px;
+  animation: apollo-fadeInUp 0.5s ease-out;
+}
+
+@keyframes apollo-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brand Header - Matches Dashboard style */
+.apollo-brand-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.apollo-brand-logo {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--apollo-white);
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(0, 179, 142, 0.3);
+}
+
+.apollo-brand-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--apollo-text-primary);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.apollo-brand-subtitle {
+  font-size: 1.05rem;
+  color: var(--apollo-text-secondary);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Selection Titles */
+.apollo-selection-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: var(--apollo-text-primary);
+  text-align: center;
+}
+
+.apollo-selection-subtitle {
+  font-size: 1rem;
+  color: var(--apollo-text-secondary);
+  text-align: center;
+  margin: 0 0 32px 0;
+}
+
+/* User Type Grid */
+.apollo-user-type-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.apollo-user-type-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--apollo-gray-50);
+  border: 2px solid var(--apollo-gray-200);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: var(--apollo-transition);
+  position: relative;
+}
+
+.apollo-user-type-card:hover {
+  background: var(--apollo-green-light);
+  border-color: var(--apollo-green-primary);
+  transform: translateX(8px);
+  box-shadow: var(--apollo-shadow-md);
+}
+
+.apollo-card-icon {
+  min-width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--apollo-white);
+  font-size: 1.8rem;
+  box-shadow: 0 4px 12px rgba(0, 179, 142, 0.3);
+  flex-shrink: 0;
+}
+
+.apollo-doctor-card .apollo-card-icon {
+  background: linear-gradient(135deg, var(--apollo-red) 0%, #b91c1c 100%);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.apollo-pharmacist-card .apollo-card-icon {
+  background: linear-gradient(135deg, var(--apollo-blue) 0%, #1d4ed8 100%);
+  box-shadow: 0 4px 12px rgba(0, 112, 205, 0.3);
+}
+
+.apollo-card-content {
+  flex: 1;
+  text-align: left;
+}
+
+.apollo-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--apollo-text-primary);
+  margin: 0 0 4px 0;
+}
+
+.apollo-card-desc {
+  font-size: 0.95rem;
+  color: var(--apollo-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Split Screen Container */
+.apollo-split-screen-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Left Panel - Image Side */
+.apollo-left-panel {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.apollo-side-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  animation: apollo-fadeInImage 0.8s ease-out;
+}
+
+@keyframes apollo-fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+.apollo-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 40px;
+  background: linear-gradient(to top, rgba(0, 179, 142, 0.95), transparent);
+  color: var(--apollo-white);
+  z-index: 1;
+}
+
+.apollo-overlay-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.apollo-overlay-content p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+/* Right Panel - Form Side */
+.apollo-right-panel {
+  flex: 1;
+  background: var(--apollo-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.apollo-form-container {
+  width: 100%;
+  max-width: 480px;
+  animation: apollo-fadeInRight 0.5s ease-out;
+}
+
+@keyframes apollo-fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Back Button */
+.apollo-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: var(--apollo-green-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 24px;
+  transition: var(--apollo-transition);
+}
+
+.apollo-back-btn:hover {
+  color: var(--apollo-green-dark);
+  gap: 12px;
+}
+
+/* Form Header */
+.apollo-form-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.apollo-form-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--apollo-white);
+  margin: 0 auto 20px;
+  box-shadow: 0 8px 24px rgba(0, 179, 142, 0.3);
+}
+
+.apollo-form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--apollo-text-primary);
+  margin: 0 0 8px 0;
+}
+
+.apollo-form-subtitle {
+  font-size: 1rem;
+  color: var(--apollo-text-secondary);
+  margin: 0;
+}
+
+/* Error Message */
+.apollo-error-message {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: var(--apollo-radius);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  color: var(--apollo-red);
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: apollo-shake 0.5s;
+}
+
+@keyframes apollo-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Form Styles */
+.apollo-auth-form {
+  margin-top: 24px;
+}
+
+.apollo-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.apollo-form-group {
+  margin-bottom: 20px;
+}
+
+.apollo-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--apollo-text-primary);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.apollo-required-badge {
+  display: inline-block;
+  background: #fee2e2;
+  color: var(--apollo-red);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+  text-transform: uppercase;
+}
+
+.apollo-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.apollo-input-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--apollo-gray-400);
+  font-size: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.apollo-form-input,
+.apollo-auth-form input[type='text'],
+.apollo-auth-form input[type='password'],
+.apollo-auth-form input[type='tel'],
+.apollo-auth-form input[type='email'],
+.apollo-auth-form select,
+.apollo-auth-form textarea {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: 2px solid var(--apollo-gray-200);
+  border-radius: var(--apollo-radius);
+  font-size: 0.95rem;
+  color: var(--apollo-text-primary);
+  background: var(--apollo-gray-50);
+  transition: var(--apollo-transition);
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.apollo-form-input:focus,
+.apollo-auth-form input[type='text']:focus,
+.apollo-auth-form input[type='password']:focus,
+.apollo-auth-form input[type='tel']:focus,
+.apollo-auth-form input[type='email']:focus,
+.apollo-auth-form select:focus,
+.apollo-auth-form textarea:focus {
+  border-color: var(--apollo-green-primary);
+  background: var(--apollo-white);
+  box-shadow: 0 0 0 4px var(--apollo-green-light);
+}
+
+.apollo-form-input::placeholder {
+  color: var(--apollo-gray-400);
+}
+
+.apollo-form-input:disabled {
+  background: var(--apollo-gray-100);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.apollo-auth-form select {
+  padding-left: 16px;
+  cursor: pointer;
+}
+
+.apollo-auth-form textarea {
+  padding-left: 16px;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.apollo-input-hint {
+  font-size: 0.8rem;
+  color: var(--apollo-text-secondary);
+  margin: 6px 0 0 0;
+  font-style: italic;
+}
+
+/* Submit Button - Matches Dashboard primary button */
+.apollo-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--apollo-green-primary) 0%, var(--apollo-green-dark) 100%);
+  border: none;
+  border-radius: var(--apollo-radius);
+  color: var(--apollo-white);
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--apollo-transition);
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(0, 179, 142, 0.3);
+}
+
+.apollo-submit-btn:hover {
+  background: linear-gradient(135deg, var(--apollo-green-dark) 0%, #0a5449 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--apollo-shadow-md);
+}
+
+.apollo-submit-btn:active {
+  transform: translateY(0);
+}
+
+.apollo-submit-btn:disabled {
+  background: var(--apollo-gray-400);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+/* Form Footer */
+.apollo-form-footer {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--apollo-gray-200);
+}
+
+.apollo-footer-text {
+  color: var(--apollo-text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.apollo-link-text {
+  color: var(--apollo-green-primary);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--apollo-transition);
+}
+
+.apollo-link-text:hover {
+  color: var(--apollo-green-dark);
+  text-decoration: underline;
+}
+
+/* Registration Form Specific */
+.apollo-register-form {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.apollo-register-form::-webkit-scrollbar {
+  width: 6px;
+}
+
+.apollo-register-form::-webkit-scrollbar-track {
+  background: var(--apollo-gray-100);
+  border-radius: 10px;
+}
+
+.apollo-register-form::-webkit-scrollbar-thumb {
+  background: var(--apollo-green-primary);
+  border-radius: 10px;
+}
+
+.apollo-register-form::-webkit-scrollbar-thumb:hover {
+  background: var(--apollo-green-dark);
+}
+
+/* Hover Effects Enhancement */
+.apollo-user-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--apollo-green-primary);
+  border-radius: 16px 0 0 16px;
+  transform: scaleY(0);
+  transition: var(--apollo-transition);
+}
+
+.apollo-user-type-card:hover::before {
+  transform: scaleY(1);
+}
+
+.apollo-doctor-card::before {
+  background: var(--apollo-red);
+}
+
+.apollo-pharmacist-card::before {
+  background: var(--apollo-blue);
+}
+
+/* Selection Animation */
+.apollo-user-type-card {
+  animation: apollo-slideIn 0.4s ease-out;
+  animation-fill-mode: both;
+}
+
+.apollo-user-type-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.apollo-user-type-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.apollo-user-type-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes apollo-slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Focus Visible Styles for Accessibility */
+*:focus-visible {
+  outline: 2px solid var(--apollo-green-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .apollo-split-screen-container {
+    flex-direction: column;
+  }
+
+  .apollo-left-panel {
+    height: 300px;
+    flex: none;
+  }
+
+  .apollo-right-panel {
+    flex: 1;
+    padding: 30px 20px;
+  }
+
+  .apollo-overlay-content h2 {
+    font-size: 2rem;
+  }
+
+  .apollo-overlay-content p {
+    font-size: 1rem;
+  }
+
+  .apollo-image-overlay {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .apollo-selection-card {
+    padding: 36px 28px;
+    max-width: 100%;
+  }
+
+  .apollo-brand-title {
+    font-size: 1.8rem;
+  }
+
+  .apollo-selection-title {
+    font-size: 1.4rem;
+  }
+
+  .apollo-user-type-card {
+    padding: 16px;
+  }
+
+  .apollo-card-icon {
+    min-width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
+
+  .apollo-card-title {
+    font-size: 1.1rem;
+  }
+
+  .apollo-card-desc {
+    font-size: 0.9rem;
+  }
+
+  .apollo-left-panel {
+    height: 250px;
+  }
+
+  .apollo-form-container {
+    max-width: 100%;
+  }
+
+  .apollo-form-title {
+    font-size: 1.6rem;
+  }
+
+  .apollo-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .apollo-selection-wrapper {
+    padding: 20px;
+  }
+
+  .apollo-selection-card {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+
+  .apollo-brand-logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 16px;
+  }
+
+  .apollo-brand-title {
+    font-size: 1.6rem;
+  }
+
+  .apollo-brand-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .apollo-selection-title {
+    font-size: 1.25rem;
+  }
+
+  .apollo-selection-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .apollo-user-type-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .apollo-card-content {
+    text-align: center;
+  }
+
+  .apollo-left-panel {
+    height: 200px;
+  }
+
+  .apollo-overlay-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .apollo-overlay-content p {
+    font-size: 0.9rem;
+  }
+
+  .apollo-right-panel {
+    padding: 24px 16px;
+  }
+
+  .apollo-form-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .apollo-form-title {
+    font-size: 1.4rem;
+  }
+
+  .apollo-form-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .apollo-form-input,
+  .apollo-auth-form input,
+  .apollo-auth-form select,
+  .apollo-auth-form textarea {
+    padding: 12px 14px 12px 44px;
+    font-size: 0.9rem;
+  }
+
+  .apollo-submit-btn {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .apollo-left-panel,
+  .apollo-back-btn {
+    display: none;
+  }
+
+  .apollo-right-panel {
+    width: 100%;
+  }
+}
+
+/* OTP-specific styles - Add these to your existing AuthSystem.css */
+
+.apollo-otp-info {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.apollo-otp-info p {
+  margin: 5px 0;
+  color: #0369a1;
+  font-size: 14px;
+}
+
+.apollo-phone-display {
+  font-weight: 600;
+  font-size: 16px !important;
+  color: #0c4a6e !important;
+}
+
+.apollo-otp-input {
+  font-size: 24px;
+  letter-spacing: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.apollo-back-btn {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 14px;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.apollo-back-btn:hover {
+  color: #0f172a;
+  transform: translateX(-3px);
+}
+
+.apollo-input-hint {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Adjust form spacing for OTP flow */
+.apollo-auth-form.apollo-otp-form {
+  padding-top: 10px;
+}
+
+/* Make OTP resend link more prominent */
+.apollo-footer-text .apollo-link-text {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Animation for OTP input */
+@keyframes otpPulse {
+  0%, 100% {
+    border-color: #3b82f6;
+  }
+  50% {
+    border-color: #60a5fa;
+  }
+}
+
+.apollo-otp-input:focus {
+  animation: otpPulse 2s infinite;
+}
+
+/* Loading state for buttons */
+.apollo-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Error message specific to OTP */
+.apollo-error-message {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+/* Success animation (optional - can be added to show OTP sent) */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.apollo-otp-info {
+  animation: slideDown 0.4s ease-out;
+}
