@@ -429,11 +429,3 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 *Built with ❤️ to make healthcare accessible to everyone*
 
 </div>
-
----
-
-<div align="center">
-
-⭐ **If this project helped you, please give it a star!** ⭐
-
-</div>
