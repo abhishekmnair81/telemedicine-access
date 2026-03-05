@@ -112,9 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -123,10 +120,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -138,8 +131,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 os.makedirs(MEDIA_ROOT, exist_ok=True)
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -173,9 +164,6 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
-# ============================================================================
-# CSRF SETTINGS - ADD THIS
-# ============================================================================
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
@@ -191,7 +179,6 @@ CSRF_COOKIE_SAMESITE = 'Lax'
 SESSION_COOKIE_SECURE = False
 SESSION_COOKIE_SAMESITE = 'Lax'
 
-# REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -211,10 +198,6 @@ REST_FRAMEWORK = {
 
 FAST2SMS_API_KEY = 'your_fast2sms_api_key_here'
 
-# ============================================================================
-# CELERY CONFIGURATION
-# ============================================================================
-
 CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL', 'redis://localhost:6379/0')
 CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND', 'redis://localhost:6379/0')
 CELERY_ACCEPT_CONTENT = ['json']
@@ -222,10 +205,6 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'UTC'
 CELERY_ENABLE_UTC = True
-
-# ============================================================================
-# EMAIL CONFIGURATION
-# ============================================================================
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
@@ -243,5 +222,4 @@ EMAIL_HOST_USER = 'teamtelemedicineruralindia@gmail.com'
 EMAIL_HOST_PASSWORD = 'rlntftimyamovcyj' 
 DEFAULT_FROM_EMAIL = 'teamtelemedicineruralindia@gmail.com'
 
-# Update timezone to support scheduled tasks
 TIME_ZONE = os.getenv('TIME_ZONE', 'UTC')
